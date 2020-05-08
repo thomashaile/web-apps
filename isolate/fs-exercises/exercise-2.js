@@ -14,43 +14,42 @@ const FILE_PATH = __dirname + '/file.json';
 
 // declare logging function
 const log = (logId, value) => console.log(
-  `\nlog ${logId}, ${Date.now() - START} ms: ${typeof value}\n`,
-  value
+    `\nlog ${logId}, ${Date.now() - START} ms: ${typeof value}\n`,
+    value
 );
 
 // --- main script ---
 
 const objectToSave = {
-  todoText: "1234",
-  completed: true
+    todoText: "1234",
+    completed: true
 };
 log(1, objectToSave);
 
-const stringToSave = _._(objectToSave, null, '  ');
+const stringToSave = JSON.stringify(objectToSave, null, '  ');
 log(2, stringToSave);
 
 
 const writeFileCallback = (err) => {
-  if (err) {
-    log(4, err);
-    return;
-  }
+    if (err) {
+        log(4, err);
+        return;
+    }
 
-  log(4, 'reading file ...');
-  // sync
-  const fileText = fs._(_, _);
+    log(4, 'reading file ...');
+    // sync
+    const fileText = fs.readFileSync(FILE_PATH, 'utf-8');
 
-  log(5, fileText);
-  assert.strictEqual(fileText, stringToSave);
+    log(5, fileText);
+    assert.strictEqual(fileText, stringToSave);
 
-  const parsedFileContents = _._(fileText);
-  log(6, parsedFileContents);
-  assert.deepStrictEqual(parsedFileContents, objectToSave);
+    const parsedFileContents = JSON.parse(fileText);
+    log(6, parsedFileContents);
+    assert.deepStrictEqual(parsedFileContents, objectToSave);
 
-  log(7, '\033[32mpass!\x1b[0m');
+    log(7, '\033[32mpass!\x1b[0m');
 };
 
 // async
-fs._(_, _, _);
+fs.writeFile(FILE_PATH, stringToSave, writeFileCallback);
 log(3, 'writing file ...');
-
