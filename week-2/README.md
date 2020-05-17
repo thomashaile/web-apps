@@ -1,6 +1,8 @@
-# Week 2
+# Web Apps
 
-## Module Name
+[<< Week 1](../week-1/README.md) | [Main Page](../README.md) | [Week 3 >>](../week-3/README.md)
+
+## Week 2
 
 - [Prep Work](#prep-work)
 - [Lesson Plan](#lesson-plan)
@@ -21,8 +23,14 @@
 
 ### About Servers
 
+- HTTP Status Code: [HTTP Request Status Code Guide](https://www.youtube.com/watch?v=VLH3FMQ5BIQ)
 - Middleware: [tutorialspoint](https://www.tutorialspoint.com/expressjs/expressjs_middleware.htm), [express.js guide](https://expressjs.com/en/guide/using-middleware.html), [writing middleware (video)](https://www.youtube.com/watch?v=msw1D8oSw5M)
 - Static Serving: [alligator article](https://alligator.io/nodejs/serving-static-files-in-express/), [codedamn video](https://www.youtube.com/watch?v=7UErZ43jzrU)
+- Error Handling Middleware:
+  - [Handling Errors in Express](https://zellwk.com/blog/express-errors/)
+  - [REST API Tutorial (Node, Express & Mongo) #10 - Error Handling](https://www.youtube.com/watch?v=w1V2SdzdQBs)
+- CORS: [Cross Origin Resource Sharing](https://www.youtube.com/watch?v=x_Z6iYY5ibc)
+- VS Code Debugger: [Getting started with Node.js debugging in VS Code](https://www.youtube.com/watch?v=2oFKNL7vYV8)
 
 ### Best Practices
 
@@ -52,24 +60,25 @@
 
 ### Exercises
 
-#### Isolating JavaScript
-
-- [learn-util-promisify]()
-
-#### Integrating JavaScript
-
-- `poke-it`
-  - Write a CLI app that reads from the [PokeApi](https://pokeapi.co/) and renders to the console
-  - Base your code off of these examples: [weather-it-promised](../integrate/weather-it-promised) & [weather-it-async-await](../integrate/weather-it-async-await)
-
 #### Suggested Study
 
+- [Express.js Crash Course](https://www.youtube.com/watch?v=L72fhGm1tfE)
 - How To Build a Job Search App (Node, APIs, Vanilla JS): [video](https://www.youtube.com/watch?v=v7cprTuAnlA), [code](https://github.com/codebubb/job-search-app/)
 - Debugging Node/Express with VSCode
   - [Burke Holland](https://www.youtube.com/watch?v=NW2HG9C_mZc)
   - [VSCode Channel Intro](https://www.youtube.com/watch?v=2oFKNL7vYV8)
   - [James Q Quick](https://www.youtube.com/watch?v=yFtU6_UaOtA)
   - [CodeSpace, 2 Ways](https://www.youtube.com/watch?v=N8O-Yf3hc-A)
+
+#### Isolate
+
+- [promisifying-fs](https://github.com/hackyourfuturebelgium/promisifying-fs)
+
+#### Integrate
+
+- `poke-it`
+  - Write a CLI app that reads from the [PokeApi](https://pokeapi.co/) and renders to the console
+  - Base your code off of these examples: [weather-it-promised](../integrate/weather-it-promised) & [weather-it-async-await](../integrate/weather-it-async-await)
 
 ### Project
 
