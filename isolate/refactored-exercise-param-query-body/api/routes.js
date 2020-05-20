@@ -2,19 +2,19 @@ const handlers = require('./handlers.js');
 const express = require('express');
 
 // create the router
-_;
+const router = express.Router();
 
 router.use((req, res, next) => {
-  console.log('routes!');
-  next();
+    console.log('routes!');
+    next();
 });
 
 router.get('/', (req, res) => {
-  res.send('routes!');
+    res.send('routes!');
 });
 
 // write the routes!
-
+router.post('/:value', handlers.readValues); //api/value
 
 
 module.exports = router;
