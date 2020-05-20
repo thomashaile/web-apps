@@ -21,14 +21,24 @@ const handlers = {
     create: (req, res, next) => {
         const name = req.params.name;
         const content = req.body.fileContent;
-
-        fs.writeFile(`${FILE_DIR}/${name}`, content, (err) => {
-
+        const filePath = `${FILE_DIR}/${name}`;
+        //first check if the file exist using access
+        fs.access(filePath, content, (err) => {
             if (err) {
-                next(err)
-                return
+                //not exist write file   
+                fs.writeFile(`${FILE_DIR}/${name}`, content, (err) => {
+                    if (err) {
+                        next(err);
+                        return;
+                    }
+                    console.error('new file created..' + name);
+                    return res.send(name);
+                });
+            } else {
+                //send exist msg
+                console.error('file exist');
+                return res.json('file exist');
             }
-            return res.send(name)
         });
     }
 };
