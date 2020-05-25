@@ -1,0 +1,42 @@
+{
+    "animals": [{
+            "id": 2,
+            "habitat": "cat",
+            "average_mass": 33,
+            "traits": {
+                "break": false,
+                "feathers": true,
+                "fur": true,
+                "feet": true,
+                "flippers": true
+            },
+            "is_extinct": false
+        },
+        {
+            "id": 3,
+            "habitat": "dog",
+            "average_mass": 133,
+            "traits": {
+                "break": false,
+                "feathers": true,
+                "fur": true,
+                "feet": true,
+                "flippers": true
+            },
+            "is_extinct": false
+        },
+        {
+            "id": 4,
+            "habitat": "tiger",
+            "average_mass": 83,
+            "traits": {
+                "break": false,
+                "feathers": true,
+                "fur": true,
+                "feet": true,
+                "flippers": true
+            },
+            "is_extinct": false
+        }
+    ]
+}
